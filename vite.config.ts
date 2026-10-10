@@ -6,6 +6,7 @@ import path from 'node:path'
 // Keep build-critical site settings here so external hosts such as Netlify do
 // not depend on the platform-managed, hidden .figma directory being uploaded.
 const siteConfiguration = {
+  title: 'Ocean Blue Bocas del Toro — Local Panga Boat Tours',
   description: 'This travel booking platform offers users a seamless experience to explore and book tours in Bocas del Toro, complete with a date picker and customizable add-ons.',
   robots: {
     index: true,
@@ -91,7 +92,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
     return html.replace(`<!-- ${slotName} -->`, content)
   }
 
-  const title = config.title ?? "Figma Make App"
+  const title = config.title ?? "Ocean Blue Bocas del Toro — Local Boat Tours"
   const description = config.description ?? ''
   const favicon = config.icons?.icon ?? ''
   const socialImage = config.openGraph?.image ?? ''
