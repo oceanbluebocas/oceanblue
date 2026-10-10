@@ -3,7 +3,17 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 
-import siteConfiguration from './.figma/make/site.json'
+// Keep build-critical site settings here so external hosts such as Netlify do
+// not depend on the platform-managed, hidden .figma directory being uploaded.
+const siteConfiguration = {
+  description: 'This travel booking platform offers users a seamless experience to explore and book tours in Bocas del Toro, complete with a date picker and customizable add-ons.',
+  robots: {
+    index: true,
+  },
+  accessibility: {
+    addBypassLinks: false,
+  },
+}
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -69,7 +79,7 @@ type FigmaSiteConfiguration = {
   }
 }
 
-/** Applies /.figma/make/site.json to the generated document shell. */
+/** Applies the site configuration to the generated document shell. */
 function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
   function sanitizeHtmlValue(value: string | undefined): string {
     return value?.replace(/[^a-zA-Z0-9_-]/g, '') || ''
