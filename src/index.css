@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-script: 'Caveat', cursive;
+  
+  --color-marine: #001844;
+  --color-marine-light: #001D4A;
+  --color-ocean: #0060B6;
+  --color-teal: #00A896;
+  --color-teal-dark: #028090;
+  --color-coral: #FF6F59;
+  --color-sand: #F8FAFC;
+  --color-white: #FFFFFF;
+
+  --color-background: var(--color-sand);
+  --color-foreground: var(--color-marine);
+  --color-primary: var(--color-ocean);
+  --color-primary-foreground: var(--color-white);
+  --color-secondary: var(--color-teal);
+  --color-secondary-foreground: var(--color-white);
+  --color-accent: var(--color-coral);
+  --color-accent-foreground: var(--color-white);
+  --color-card: var(--color-white);
+  --color-card-foreground: var(--color-marine);
+  --color-border: #e2e8f0;
+  --color-ring: var(--color-ocean);
+}
+
+:root {
+  --radius: 0.75rem;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.font-script {
+  font-family: var(--font-script);
+  text-transform: none;
+  letter-spacing: normal;
+}
